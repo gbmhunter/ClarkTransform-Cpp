@@ -2,21 +2,10 @@
 //! @file 		ClarkTransform.h
 //! @author 	Geoffrey Hunter <gbmhunter@gmail.com> (www.cladlab.com)
 //! @edited 	n/a
-//! @date 		12/10/2012
-//! @brief 		Header file for ClarkTransform.cpp
+//! @date 		2012/10/12
+//! @brief 		Header file for the ClarkTransform library.
 //! @details
-//!		<b>Last Modified:			</b> 20/11/2012					\n
-//!		<b>Version:					</b> v1.0.0						\n
-//!		<b>Company:					</b> CladLabs					\n
-//!		<b>Project:					</b> Free code libraries		\n
-//!		<b>Language:				</b> C++						\n
-//!		<b>Compiler:				</b> GCC						\n
-//! 	<b>uC Model:				</b> PSoC5						\n
-//!		<b>Computer Architecture:	</b> ARM						\n
-//! 	<b>Operating System:		</b> FreeRTOS v7.2.0			\n
-//!		<b>Documentation Format:	</b> Doxygen					\n
-//!		<b>License:					</b> GPLv3						\n
-//!		
+//!				See README.rst	
 
 //===============================================================================================//
 //====================================== HEADER GUARD ===========================================//

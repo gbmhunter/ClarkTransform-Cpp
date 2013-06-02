@@ -5,7 +5,7 @@ Clark Transformation Library
 - Author: gbmhunter <gbmhunter@gmail.com> (http://www.cladlab.com)
 - Created: 2012/10/12
 - Last Modified: 2013/06/03
-- Version: v1.0.0.1
+- Version: v1.0.1.0
 - Company: CladLabs
 - Project: n/a
 - Language: C++
@@ -50,5 +50,6 @@ For known bugs, desired enhancements e.t.c, see GitHub issues section.
 Changelog
 ---------
 
+- v1.0.1.0		-> (2013/06/03) Renamed incorrect extension .cs to .cpp. Moved .h files into 'src/include/' and renamed to .hpp.
 - v1.0.0.1		-> (2013/06/03) Removed Mercurial repo files (.hgingnore, .hgtags).
 - v1.0.0.0 		-> (2013/06/03) First versioned commit. Added README.rst.
