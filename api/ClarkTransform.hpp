@@ -20,7 +20,7 @@
 #endif
 
 // Library headers
-#include "../include/ClarkTransform.hpp"
+#include "../include/Transformer.hpp"
 
 #endif // #define CLARK_TRANSFORM_CLARK_TRANSFORM_H
 

@@ -1,9 +1,9 @@
 //!
-//! @file 				ClarkTransform.cpp
+//! @file 				Transformer.cpp
 //! @author 			Geoffrey Hunter <gbmhunter@gmail.com> (www.cladlab.com)
 //! @edited 			n/a
 //! @created			2012/10/09
-//! @last-modified 		2014/01/14
+//! @last-modified 		2014/01/21
 //! @brief 				Provides functions to perform the clark transform. Useful for BLDC motor FOC.
 //! @details
 //!						See the README in the repo root dir for more info.
@@ -26,7 +26,7 @@
 #include <stdlib.h>
 
 // User headers
-#include "../include/ClarkTransform.hpp"
+#include "../include/Transformer.hpp"
 
 //===============================================================================================//
 //======================================== NAMESPACE ============================================//
@@ -44,13 +44,18 @@ namespace ClarkTransform
 	//====================================  FUNCTION PROTOTYPES =====================================//
 	//===============================================================================================//
 
+	//! @brief		The Clark transformation implemented with doubles.
+	void Transformer::Forward(double a, double b, double c, double *alpha ,double *beta)
+	{
+		// alpha = sqrt(2/3)*(a-0.5b-0.5c)
+		// beta = 1/sqrt(2)*(b-c)
+		*alpha = sqrt(2.0/3.0)*(a - 0.5*b - 0.5*c);
+		*beta = (1.0/sqrt(2.0))*(b - c);
+	}
+
 #if(config_ENABLE_FIXED_POINT_FUNCTIONS == 1)
-	//! @brief		The Clark transformation implemented with fixed-point numbers
-	//! @details	Uses a scaling factor of sqrt(2/3). Calculations:
-	//! 				alpha = sqrt(2/3)*(a-0.5b-0.5c)
-	//! 				beta = 1/sqrt(2)*(b-c)
-	//!				Execution Time: 72 clock cycles (1.5us @ 48MHz) (including function call)
-	void Forward(Fp::fp<CDP> a, Fp::fp<CDP> b, Fp::fp<CDP> c,
+
+	void Transformer::Forward(Fp::fp<CDP> a, Fp::fp<CDP> b, Fp::fp<CDP> c,
 		Fp::fp<CDP> *alpha , Fp::fp<CDP> *beta)
 	{
 		// Used to hold intermediary results
@@ -77,20 +82,6 @@ namespace ClarkTransform
 		alpha->intValue = (tempVar.intValue>>1) + (tempVar.intValue>>2) + (tempVar.intValue>>4);
 	}
 #endif
-
-//! @brief		The Clark transformation implemented with doubles.
-void ClarkTransform_Forward(double a, double b, double c, double *alpha ,double *beta)
-{
-	// alpha = sqrt(2/3)*(a-0.5b-0.5c)
-	// beta = 1/sqrt(2)*(b-c)
-	*alpha = sqrt(2.0/3.0)*(a - 0.5*b - 0.5*c);
-	*beta = (1.0/sqrt(2.0))*(b - c);
-}
-
-void ClarkTransform_Inverse()
-{
-	// not implemented
-}
 
 } //namespace ClarkTransform
 
