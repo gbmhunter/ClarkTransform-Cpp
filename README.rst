@@ -1,11 +1,15 @@
 ============================
-Clark Transformation Library
+clark-transform-cpp
 ============================
+
+----------------------------
+Clark Transformation Library
+----------------------------
 
 - Author: gbmhunter <gbmhunter@gmail.com> (http://www.cladlab.com)
 - Created: 2012/10/12
-- Last Modified: 2013/06/08
-- Version: v1.0.1.1
+- Last Modified: 2014/01/21
+- Version: v1.1.0.0
 - Company: CladLabs
 - Project: n/a
 - Language: C++
@@ -21,7 +25,7 @@ Description
 
 Library for performing the Clark transformation, a mathematical transformation commonly used for BLDC motor control.
 
-Can be used with the fixed point library Cpp-FixedPoint, for ultra fast computations.
+Can be used with the fixed point library fixed-point-cpp, for ultra fast computations.
 
 Internal Dependencies
 ---------------------
@@ -40,7 +44,7 @@ Usage
 	
 	Coming soon.
 	
-See test/ClarkTransformTest.cpp for more examples.
+See `test/ClarkTransformTest.cpp` for more examples.
 	
 Issues
 ------
@@ -53,6 +57,7 @@ Changelog
 ======== ========== ===================================================================================================
 Version  Date       Comment
 ======== ========== ===================================================================================================
+v1.1.0.0 2014/01/21 Moved 'src/include' files to 'include/' to follow new file convention. Updated title in README and changed name from 'Cpp-ClarkTransform' to 'clark-transform-cpp' to follow new project naming convention. Updated reference to fixed-point-cpp in README.
 v1.0.1.1 2013/06/08 README Changelog now in table format.
 v1.0.1.0 2013/06/03 Renamed incorrect extension .cs to .cpp. Moved .h files into 'src/include/' and renamed to .hpp.
 v1.0.0.1 2013/06/03 Removed Mercurial repo files (.hgingnore, .hgtags).
